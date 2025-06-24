@@ -4,6 +4,7 @@ import { IUser } from "../models/user";
 
 
 
+
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
     let users
     try {
