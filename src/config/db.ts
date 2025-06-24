@@ -5,8 +5,10 @@ dotenv.config();
 
 const connectDB = async (): Promise<void> => {
     try {
-        // Local MongoDB connection (default port: 27017)
-        const mongoURL = process.env.MONGO_URL || "mongodb://localhost:27017/job-board-api";
+        if (!process.env.MONGO_URL) {
+            throw new Error("MONGO_URL is not defined in environment variables");
+        }
+        const mongoURL = process.env.MONGO_URL
         
         await mongoose.connect(mongoURL, {
             serverSelectionTimeoutMS: 5000, // Fail fast if DB isn't running
