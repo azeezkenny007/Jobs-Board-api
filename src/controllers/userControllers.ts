@@ -2,6 +2,7 @@ import { Response, Request } from "express";
 import { User } from "../models/user";
 import { IUser } from "../models/user";
 
+
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
     let users
     try {
