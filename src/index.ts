@@ -2,8 +2,8 @@ import express , { Application, Request, Response } from 'express';
 import  connectDB from './config/db';
 import userRouter from './routes/users';
 const app = express();
-const port = 3000;
 app.use(express.json());
+const port = 3000;
 app.use(express.urlencoded({ extended: true }));
 
 connectDB()
